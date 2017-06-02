@@ -1,3 +1,12 @@
+/*输出链表倒数第 k 个结点
+static class ListNode {
+	int val;
+	ListNode next = null;
+
+	ListNode(int val) {
+		this.val = val;
+	}
+}*/
 public class Solution {
     public ListNode FindKthToTail(ListNode head,int k){
 		if(head == null){
@@ -28,15 +37,6 @@ public class Solution {
         return head;
     }
     
-    static class ListNode {
-		int val;
-		ListNode next = null;
-
-		ListNode(int val) {
-			this.val = val;
-		}
-	}
-
     static class IligalInputException extends Exception{
    		public IligalInputException(String message){
      		super(message);
