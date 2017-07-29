@@ -39,7 +39,7 @@ public class Solution {
     }
     
     public boolean equal(double a, double b){
-        if(a - b > -0.0000001 && a - b < -0.0000001){
+        if(a - b > -0.0000001 && a - b < 0.0000001){
             return true;
         }
         return false;
