@@ -33,7 +33,7 @@ public class Solution2 {
             }
             num[i + j + 1] = carry;
         }
-        //去掉截关前多余的 0
+        //去掉结果前多余的 0
         i = 0;
         while (i < (len1 + len2) && num[i] == 0) {
             i++;
