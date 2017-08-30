@@ -1,3 +1,4 @@
+
 package demo;
 
 import java.util.HashMap;
@@ -8,11 +9,11 @@ import java.util.Map;
  * Created by CLAY on 2017/7/1.
  */
 public class LRUMap<K, V> {
-    private Map<K, V> maps = new HashMap<K, V>();
-    private LinkedList<K> keys = new LinkedList<K>();
-    private int limit;  //缓存块大小
+    private static Map<K, V> maps = new HashMap<K, V>();
+    private static LinkedList<K> keys = new LinkedList<K>();
+    private static int limit;  //缓存块大小
 
-    public LRUMap() {
+    public LRUMap(limit) {
         this.limit = limit;
     }
 
