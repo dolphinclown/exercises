@@ -1,5 +1,5 @@
 /**
- * Á¬Ğø×ÖÊı×é×î´óºÍ ÀıÈç:{6,-3,-2,7,-15,1,2,2},Á¬Ğø×ÓÏòÁ¿µÄ×î´óºÍÎª8(´ÓµÚ0¸ö¿ªÊ¼,µ½µÚ3¸öÎªÖ¹)
+ * è¿ç»­å­æ•°ç»„æœ€å¤§å’Œ ä¾‹å¦‚:{6,-3,-2,7,-15,1,2,2},è¿ç»­å­å‘é‡çš„æœ€å¤§å’Œä¸º8(ä»ç¬¬0ä¸ªå¼€å§‹,åˆ°ç¬¬3ä¸ªä¸ºæ­¢)
  **/
 public class FindGreatestSumOfSubArray {
     public int findGreatestSumOfSubArray(int[] array) {
@@ -10,7 +10,7 @@ public class FindGreatestSumOfSubArray {
         int maxSum = array[0];
         int curSum = maxSum;
         for(int i = 1; i < array.length; i++){
-			if(curSum <= 0){
+	    if(curSum <= 0){
                 curSum = array[i];
             }else{
                 curSum += array[i];
