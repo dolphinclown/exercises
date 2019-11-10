@@ -1,15 +1,15 @@
 /**
-  * ·­×ªµ¥´ÊĞòÁĞ£ºstudent. a am I  ¡ª¡ª¡ª¡ª>  I am a student.
-  */
+ * ç¿»è½¬å•è¯åºåˆ—ï¼šstudent. a am I  â€”â€”â€”â€”>  I am a student.
+ */
 public class ReverseSentence {
     public String reverseSentence(String str) {
         if (str == null || str.length() == 0) {
             return "";
         }
         char[] array = str.toCharArray();
-        //1. ·­×ªÕû¸öµ¥´ÊĞòÁĞ	student. a am I ¡ª¡ª¡ª¡ª> I ma a .tneduts
+        //1. ç¿»è½¬æ•´ä¸ªå•è¯åºåˆ—	student. a am I â€”â€”â€”â€”> I ma a .tneduts
         reverse(array, 0,  array.length - 1);
-        //2. ·Ö±ğ·­×ªĞòÁĞÖĞµÄÃ¿¸öµ¥´Ê
+        //2. åˆ†åˆ«ç¿»è½¬åºåˆ—ä¸­çš„æ¯ä¸ªå•è¯
         int begin = 0;
         int position = 1;
         while (begin < array.length) {
@@ -20,7 +20,7 @@ public class ReverseSentence {
                 }
                 position = begin + 1;
             }
-            
+
             if (position == array.length || array[position] == ' ') {
                 reverse(array, begin, position - 1);
                 begin = position;

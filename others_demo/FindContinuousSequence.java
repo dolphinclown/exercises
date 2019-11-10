@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 /**
-  * 输出所有和为S的连续正数序列。序列内按照从小至大的顺序，序列间按照开始数字从小到大的顺序
-  */
+ * 杈撳嚭鎵�鏈夊拰涓篠鐨勮繛缁鏁板簭鍒椼�傚簭鍒楀唴鎸夌収浠庡皬鑷冲ぇ鐨勯『搴忥紝搴忓垪闂存寜鐓у紑濮嬫暟瀛椾粠灏忓埌澶х殑椤哄簭
+ */
 public class FindContinuousSequence {
     public ArrayList<ArrayList<Integer> > findContinuousSequence(int sum) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         if (sum < 3) {
-           return result;
+            return result;
         }
         int small = 1;
         int big = 2;

@@ -1,13 +1,13 @@
 import java.util.*;
 /**
-  *ÇëÉè¼ÆÒ»¸ö¸ßÐ§Ëã·¨£¬ÅÐ¶ÏÊý×éÖÐÊÇ·ñÓÐÖØ¸´Öµ¡£±ØÐë±£Ö¤¶îÍâ¿Õ¼ä¸´ÔÓ¶ÈÎª O(1)¡£¸ø¶¨Ò»¸ö int Êý×é A ¼°ËüµÄ´óÐ¡ n£¬Çë·µ»ØËüÊÇ·ñÓÐÖØ¸´Öµ¡£
-  */
+ *è¯·è®¾è®¡ä¸€ä¸ªé«˜æ•ˆç®—æ³•ï¼Œåˆ¤æ–­æ•°ç»„ä¸­æ˜¯å¦æœ‰é‡å¤å€¼ã€‚å¿…é¡»ä¿è¯é¢å¤–ç©ºé—´å¤æ‚åº¦ä¸º O(1)ã€‚ç»™å®šä¸€ä¸ª int æ•°ç»„ A åŠå®ƒçš„å¤§å° nï¼Œè¯·è¿”å›žå®ƒæ˜¯å¦æœ‰é‡å¤å€¼ã€‚
+ */
 public class Checker {
     public boolean checkDuplicate(int[] a, int n) {
-        // Ë¼Â·£ºÊ¹ÓÃ¶ÑÅÅÐò£¬ÔÚÉ¾³ý´ó¸ù»òÕßÐ¡¸ùµÄÍ¬Ê±£¬ºÍÉÏÒ»´ÎÉ¾³ýµÄÔªËØ½øÐÐ±È¶Ô£¬Èç¹ûÏàµÈ£¬
-        //      Ôò´æÏàµÈµÄÔªËØ£¬ÔòËµÃ÷ÖØ¸´¡£
+        // æ€è·¯ï¼šä½¿ç”¨å †æŽ’åºï¼Œåœ¨åˆ é™¤å¤§æ ¹æˆ–è€…å°æ ¹çš„åŒæ—¶ï¼Œå’Œä¸Šä¸€æ¬¡åˆ é™¤çš„å…ƒç´ è¿›è¡Œæ¯”å¯¹ï¼Œå¦‚æžœç›¸ç­‰ï¼Œ
+        //      åˆ™å­˜ç›¸ç­‰çš„å…ƒç´ ï¼Œåˆ™è¯´æ˜Žé‡å¤ã€‚
         if (a == null || a.length == 0) {
-            throw new IllegalArgumentException("²ÎÊý´íÎó");
+            throw new IllegalArgumentException("å‚æ•°é”™è¯¯");
         }
         boolean flag = false;
         for (int i = n / 2; i >= 0; i--) {
@@ -25,14 +25,14 @@ public class Checker {
         }
         return flag;
     }
-    
+
     public void buildHeap(int[] a, int index, int length){
         int child;
         int temp = a[index];
         for( ; index * 2 + 1 < length; index = child){
             child = index * 2 + 1;
             if(child != length - 1 && a[child] < a[child + 1]){
-                 child++;
+                child++;
             }
             if(temp > a[child]){
                 break;
@@ -41,9 +41,9 @@ public class Checker {
                 index = child;
             }
         }
-         a[index] = temp;
+        a[index] = temp;
     }
-     
+
     public void swap(int[] a,int m,int n){
         int temp = a[m];
         a[m] = a[n];

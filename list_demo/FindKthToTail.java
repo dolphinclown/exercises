@@ -1,4 +1,4 @@
-/*Êä³öÁ´±íµ¹ÊýµÚ k ¸ö½áµã
+/*è¾“å‡ºé“¾è¡¨å€’æ•°ç¬¬ k ä¸ªç»“ç‚¹
 static class ListNode {
 	int val;
 	ListNode next = null;
@@ -9,37 +9,37 @@ static class ListNode {
 }*/
 public class Solution {
     public ListNode FindKthToTail(ListNode head,int k){
-		if(head == null){
+        if(head == null){
             return null;
         }
-        
+
         if(k <= 0){
-			throw new IligalInputException("Invalid Input!");
+            throw new IligalInputException("Invalid Input!");
         }
-        
-        //fast ÏÈ×ß k - 1 ²½
+
+        //fast å…ˆèµ° k - 1 æ­¥
         ListNode fast = head;
         for(int i = 1; i < k; i++){
             if(fast.next != null){
-             	fast = fast.next;
+                fast = fast.next;
             }else{
                 if(i <= k - 1){
-					throw new IligalInputException("Invalid Input!");
+                    throw new IligalInputException("Invalid Input!");
                 }
             }
         }
-        
+
         while(fast.next != null){
             head = head.next;
             fast = fast.next;
         }
-        
+
         return head;
     }
-    
+
     static class IligalInputException extends Exception{
-   		public IligalInputException(String message){
-     		super(message);
-   		}
+        public IligalInputException(String message){
+            super(message);
+        }
     }
 }

@@ -2,7 +2,7 @@ package sword;
 
 /**
  * Created by CLAY on 2017/6/21.
- *ÊäÈëÒ»¿Ã¶ş²æËÑË÷Ê÷£¬½«¸Ã¶ş²æËÑË÷Ê÷×ª»»³ÉÒ»¸öÅÅĞòµÄË«ÏòÁ´±í¡£ÒªÇó²»ÄÜ´´½¨ÈÎºÎĞÂµÄ½áµã£¬Ö»ÄÜµ÷ÕûÊ÷ÖĞ½áµãÖ¸ÕëµÄÖ¸Ïò¡£ 
+ *è¾“å…¥ä¸€æ£µäºŒå‰æœç´¢æ ‘ï¼Œå°†è¯¥äºŒå‰æœç´¢æ ‘è½¬æ¢æˆä¸€ä¸ªæ’åºçš„åŒå‘é“¾è¡¨ã€‚è¦æ±‚ä¸èƒ½åˆ›å»ºä»»ä½•æ–°çš„ç»“ç‚¹ï¼Œåªèƒ½è°ƒæ•´æ ‘ä¸­ç»“ç‚¹æŒ‡é’ˆçš„æŒ‡å‘ã€‚
  */
 public class ConvertToList {
     static class TreeNode {
@@ -16,12 +16,12 @@ public class ConvertToList {
         }
 
     }
-    //×îºó¼ÓÈëµÄÁ´±íÖĞµÄ½áµã
+    //æœ€ååŠ å…¥çš„é“¾è¡¨ä¸­çš„ç»“ç‚¹
     public static TreeNode lastNodeInList = null;
     public static TreeNode convert(TreeNode pRootOfTree) {
-        /*left Ïàµ±ÓÚË«Á´±íµÄ pre Ö¸Õë£¬ right Ïàµ±ÓÚË«Á´±íµÄ next Ö¸Õë
-          Ê¹ÓÃÖĞĞò±éÀú£¬·ÇÒ¶½áµãµÄ×ó×ÓÊ÷Îª left Ö¸ÕëÖ¸ÏòµÄ½áµã£¬ÓÒ×ÓÊ÷Îª right Ö¸ÕëÖ¸ÏòµÄ½áµã
-          Ê÷µÄ¸ù½áµãµÄ left Ö¸ÕëÖ¸Ïò×ó×ÓÊ÷µÄ×î´óÖµ£¬right Ö¸ÕëÖ¸ÏòÓÒ×ÓÊ÷µÄ×îĞ¡Öµ
+        /*left ç›¸å½“äºåŒé“¾è¡¨çš„ pre æŒ‡é’ˆï¼Œ right ç›¸å½“äºåŒé“¾è¡¨çš„ next æŒ‡é’ˆ
+          ä½¿ç”¨ä¸­åºéå†ï¼Œéå¶ç»“ç‚¹çš„å·¦å­æ ‘ä¸º left æŒ‡é’ˆæŒ‡å‘çš„ç»“ç‚¹ï¼Œå³å­æ ‘ä¸º right æŒ‡é’ˆæŒ‡å‘çš„ç»“ç‚¹
+          æ ‘çš„æ ¹ç»“ç‚¹çš„ left æŒ‡é’ˆæŒ‡å‘å·¦å­æ ‘çš„æœ€å¤§å€¼ï¼Œright æŒ‡é’ˆæŒ‡å‘å³å­æ ‘çš„æœ€å°å€¼
          */
         if (pRootOfTree == null) {
             return null;
@@ -31,7 +31,7 @@ public class ConvertToList {
         }
 
         convertNode(pRootOfTree);
-        //´ÓºóÍùÇ°£¬ÕÒµ½Á´±íµÄÍ·½áµã
+        //ä»åå¾€å‰ï¼Œæ‰¾åˆ°é“¾è¡¨çš„å¤´ç»“ç‚¹
         TreeNode headNodeInList = lastNodeInList;
         while (headNodeInList != null && headNodeInList.left != null) {
             headNodeInList = headNodeInList.left;
@@ -47,13 +47,13 @@ public class ConvertToList {
             convertNode(root.left);
         }
 
-        //½«µ±Ç°½áµãµÄ left Ö¸Õë¸üĞÂÎªÉÏÒ»´Î¼ÓÈëÁ´±íµÄ½áµã£¨lastNodeInList£©£¬
-        //²¢½«ÉÏÒ»´Î¼ÓÈëÁ´±íµÄ½áµã£¨lastNodeInList£©µÄ right Ö¸ÕëÖ¸Ïòµ±Ç°½áµã
+        //å°†å½“å‰ç»“ç‚¹çš„ left æŒ‡é’ˆæ›´æ–°ä¸ºä¸Šä¸€æ¬¡åŠ å…¥é“¾è¡¨çš„ç»“ç‚¹ï¼ˆlastNodeInListï¼‰ï¼Œ
+        //å¹¶å°†ä¸Šä¸€æ¬¡åŠ å…¥é“¾è¡¨çš„ç»“ç‚¹ï¼ˆlastNodeInListï¼‰çš„ right æŒ‡é’ˆæŒ‡å‘å½“å‰ç»“ç‚¹
         root.left = lastNodeInList;
         if (lastNodeInList != null) {
             lastNodeInList.right = root;
         }
-        //½« lastNodeINList ¸üĞÂÎª×îºó¼ÓÈëÁ´±íµÄ½áµã
+        //å°† lastNodeINList æ›´æ–°ä¸ºæœ€ååŠ å…¥é“¾è¡¨çš„ç»“ç‚¹
         lastNodeInList = root;
 
         if (root.right != null) {

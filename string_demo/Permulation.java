@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 /**
  * Created by CLAY on 2017/6/22.
- * 求一个字符串的全排列（注意去重）
+ * 姹備竴涓瓧绗︿覆鐨勫叏鎺掑垪锛堟敞鎰忓幓閲嶏級
  */
 public class Permulation {
     public static ArrayList<String> permutation(String str) {

@@ -1,14 +1,14 @@
 import java.util.*;
 /**
- * ����Ǯ��ϰ
- * ������penny��penny�����е�ֵ��Ϊ�����Ҳ��ظ���ÿ��ֵ����һ����ֵ�Ļ��ң�ÿ����ֵ�Ļ��ҿ���ʹ�������ţ��ٸ���һ������aim(С�ڵ���1000)����Ҫ�ҵ�Ǯ������Ǯ�ж����ַ�����
- * ��������penny�����Ĵ�С(С�ڵ���50)��ͬʱ����һ������aim���뷵���ж����ַ������Դճ�aim��
+ * 找零钱练习
+ * 有数组penny，penny中所有的值都为正数且不重复。每个值代表一种面值的货币，每种面值的货币可以使用任意张，再给定一个整数aim(小于等于1000)代表要找的钱数，求换钱有多少种方法。
+ * 给定数组penny及它的大小(小于等于50)，同时给定一个整数aim，请返回有多少种方法可以凑成aim。
  */
 public class Exchange {
     public int countWays(int[] penny, int n, int aim) {
-		//dp[i][j] ��ʾʹ���±� 0~i �Ľ����ֵ��ȥ�� aim ���ж����ַ���
+        //dp[i][j] 表示使用下标 0~i 的金币面值，去凑 aim 金额，有多少种方法
         int[][] dp = new int[n][aim+1];
-		//��ʼ���߽�ֵ
+        //初始化边界值
         for(int i=0; i<n; i++){
             dp[i][0] = 1;
         }
@@ -19,7 +19,7 @@ public class Exchange {
                 dp[0][j] = 0;
             }
         }
-		//���� dp[n - 1][aim] ��Ϊ���󷽷���
+        //计算 dp[n - 1][aim] 即为所求方法数
         for(int i=1; i<n; i++){
             for(int j=1; j<=aim; j++){
                 if(penny[i] > j){

@@ -1,28 +1,28 @@
 /**
-  * ���˿���������� 5 ���ƣ��ж��ǲ���һ��˳�ӣ�����5�����ǲ��������ġ� 2-10λ���ֱ���
-  * A Ϊ 1��J Ϊ 11�� Q Ϊ 12��K Ϊ 13������С�����Կ�����������
-  */
+ * 从扑克牌中随机抽 5 张牌，判断是不是一个顺子，即这5张牌是不是连续的。 2-10位数字本身
+ * A 为 1，J 为 11， Q 为 12，K 为 13，而大小王可以看成任意数字
+ */
 public class IsContinuous {
-    //˼·�����Ȱ���������ͳ�������� 0 �ĸ�����Ȼ���ҳ��������Ƿ��п�ȱλ��
-    //����п�ȱλ���ж� 0 �ĸ����Ƿ�����ֲ������ԵĻ�����˵���������ġ�
-    //����Ҫע��һ�㣺�������õ��������������ͬ�����֣����˿��ƽǶȿ����Ǵ��ڶ��ӣ�
-    //			   ��ôҲ�ǲ������ġ�
+    //思路：首先把数组排序，统计数组中 0 的个数，然后找出数组中是否有空缺位，
+    //如果有空缺位，判断 0 的个数是否可以弥补，可以的话，则说明是连续的。
+    //还需要注意一点：如果排序好的数组存在两个相同的数字，在扑克牌角度看就是存在对子，
+    //			   那么也是不连续的。
     public boolean isContinuous(int[] numbers) {
         if(numbers == null || numbers.length == 0){
             return false;
         }
-        //1. ����������
+        //1. 将数组排序
         sort(numbers);
-        //2. ͳ�������� 0 �ĸ���
+        //2. 统计数组中 0 的个数
         int timesOfZero = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == 0) {
                 timesOfZero++;
             }
         }
-        //3. ͳ�ƿ�λ�ĸ���
+        //3. 统计空位的个数
         int numbersOfGap = 0;
-        int small = timesOfZero; //��һ���� 0 ����
+        int small = timesOfZero; //第一个非 0 数字
         int big = small + 1;
         while (big < numbers.length) {
             if (numbers[small] == numbers[big]) {

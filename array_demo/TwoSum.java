@@ -13,7 +13,7 @@ import java.util.Map;
  * return [0, 1].
  */
 public class TwoSum {
-    //1.ʱ�临�Ӷ� O(n^2),�ռ临�Ӷ� O(1)
+    //1.时间复杂度 O(n^2),空间复杂度 O(1)
     public int[] twoSum1(int[] nums, int target) {
         if(nums == null || nums.length <= 1){
             throw new IllegalArgumentException("Illegal argument");
@@ -28,7 +28,7 @@ public class TwoSum {
         throw new IllegalArgumentException("No two sum solution");
     }
 
-    //2.ʱ�临�Ӷ� O(n),�ռ临�Ӷ� O(n),two-pass
+    //2.时间复杂度 O(n),空间复杂度 O(n),two-pass
     public int[] twoSum2(int[] nums, int target) {
         if(nums == null || nums.length <= 1){
             throw new IllegalArgumentException("Illegal argument");
@@ -46,7 +46,7 @@ public class TwoSum {
         throw new IllegalArgumentException("No two sum solution");
     }
 
-    //3.ʱ�临�Ӷ� O(n),�ռ临�Ӷ� O(n),one-pass
+    //3.时间复杂度 O(n),空间复杂度 O(n),one-pass
     public int[] twoSum3(int[] nums, int target) {
         if(nums == null || nums.length <= 1){
             throw new IllegalArgumentException("Illegal argument");

@@ -1,4 +1,4 @@
-/*ÊäÈëÁ½¸öµ¥µ÷µİÔöµÄÁ´±í£¬Êä³öÁ½¸öÁ´±íºÏ³ÉºóµÄÁ´±í£¬µ±È»ÎÒÃÇĞèÒªºÏ³ÉºóµÄÁ´±íÂú×ãµ¥µ÷²»¼õ¹æÔò¡£
+/*è¾“å…¥ä¸¤ä¸ªå•è°ƒé€’å¢çš„é“¾è¡¨ï¼Œè¾“å‡ºä¸¤ä¸ªé“¾è¡¨åˆæˆåçš„é“¾è¡¨ï¼Œå½“ç„¶æˆ‘ä»¬éœ€è¦åˆæˆåçš„é“¾è¡¨æ»¡è¶³å•è°ƒä¸å‡è§„åˆ™ã€‚
 public class ListNode {
     int val;
     ListNode next = null;
@@ -16,9 +16,9 @@ public class Solution {
         }else if(list2 == null){
             return list1;
         }
-        
+
         ListNode head = null;
-        //1.È·¶¨Í·½áµã
+        //1.ç¡®å®šå¤´ç»“ç‚¹
         if(list1.val <= list2.val){
             head = list1;
             list1 = list1.next;
@@ -26,10 +26,10 @@ public class Solution {
             head = list2;
             list2 = list2.next;
         }
-        
-        ListNode p = head; //Ö¸ÏòºÏ²¢Á´±íµÄµ±Ç°ºÏ²¢½áµã
-        //2.ºÏ²¢Á´±í
-		while(list1 != null && list2 != null){
+
+        ListNode p = head; //æŒ‡å‘åˆå¹¶é“¾è¡¨çš„å½“å‰åˆå¹¶ç»“ç‚¹
+        //2.åˆå¹¶é“¾è¡¨
+        while(list1 != null && list2 != null){
             if(list1.val >= list2.val){
                 p.next = list2;
                 list2 = list2.next;
@@ -40,16 +40,16 @@ public class Solution {
                 p = p.next;
             }
         }
-        
+
         if(list1 != null){
             p.next = list1;
         }
-        
+
         if(list2 != null){
-			p.next = list2;
+            p.next = list2;
         }
-        
-        
-      	return head;
+
+
+        return head;
     }
 }

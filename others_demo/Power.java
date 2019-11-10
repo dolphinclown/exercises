@@ -3,24 +3,24 @@ public class Solution {
         if(equal(base, 0.0) && exponent < 0){
             return 0;
         }
-        
+
         int absExponent = exponent;
         if(exponent < 0){
             absExponent = -exponent;
         }
-        
+
         double result = PowerWithUnsignedExponent(base, absExponent);
         if(exponent < 0){
             result = 1.0 / result;
         }
-        
+
         return result;
     }
-    
+
     /**
-     *Ê¹ÓÃ¹«Ê½£º a^n = 
-     *		  1.nÎªÅ¼Êý£ºa^n/2 * a^n/2
-     *        2.nÎªÆæÊý£ºa^(n-1)/2 * a^(n-1)/2 * a
+     *ä½¿ç”¨å…¬å¼ï¼š a^n =
+     *		  1.nä¸ºå¶æ•°ï¼ša^n/2 * a^n/2
+     *        2.nä¸ºå¥‡æ•°ï¼ša^(n-1)/2 * a^(n-1)/2 * a
      */
     public double PowerWithUnsignedExponent(double base, int exponent){
         if(exponent == 0){
@@ -29,7 +29,7 @@ public class Solution {
         if(exponent == 1){
             return base;
         }
-        
+
         double result = PowerWithUnsignedExponent(base, exponent >> 1);
         result *= result;
         if((exponent & 1) == 1){
@@ -37,7 +37,7 @@ public class Solution {
         }
         return result;
     }
-    
+
     public boolean equal(double a, double b){
         if(a - b > -0.0000001 && a - b < 0.0000001){
             return true;

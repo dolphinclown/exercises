@@ -1,4 +1,4 @@
-/*ÊäÈëÒ»¸öÁ´±í£¬·´×ªÁ´±íºó£¬Êä³öÁ´±íµÄËùÓĞÔªËØ¡£
+/*è¾“å…¥ä¸€ä¸ªé“¾è¡¨ï¼Œåè½¬é“¾è¡¨åï¼Œè¾“å‡ºé“¾è¡¨çš„æ‰€æœ‰å…ƒç´ ã€‚
 public class ListNode {
 	int val;
 	ListNode next = null;
@@ -9,21 +9,21 @@ public class ListNode {
 }*/
 public class Solution {
     public ListNode ReverseList(ListNode head) {
- 		if(head == null){
-           return null; 
+        if(head == null){
+            return null;
         }
-        
-        //Ê¹ÓÃÈı¸öÖ¸Õë£¬head Ö¸Õë±£³Ö²»±ä£¬pre Ö¸ÏòĞÂµÄÍ·½áµã£¬behind Ö¸ÏòÏÂÒ»¸öÒªÒÆ¶¯µÄ½áµã
+
+        //ä½¿ç”¨ä¸‰ä¸ªæŒ‡é’ˆï¼Œhead æŒ‡é’ˆä¿æŒä¸å˜ï¼Œpre æŒ‡å‘æ–°çš„å¤´ç»“ç‚¹ï¼Œbehind æŒ‡å‘ä¸‹ä¸€ä¸ªè¦ç§»åŠ¨çš„ç»“ç‚¹
         ListNode pre = head;
         ListNode behind = head.next;
-        
+
         while(behind != null){
             head.next = behind.next;
             behind.next = pre;
             pre = behind;
             behind = head.next;
         }
-        
+
         return pre;
     }
 }

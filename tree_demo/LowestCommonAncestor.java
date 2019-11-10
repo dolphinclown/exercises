@@ -9,9 +9,9 @@ public class lowestCommonAncestor {
      * @return: Return the least common ancestor(LCA) of the two nodes.
      */
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
-        // Ë¼Â·£ºÇ°Ðò±éÀú¶þ²æÊ÷£¬·Ö±ðÕÒ³ö´Ó¸ù½áµãµ½ A B Á½¸ö½áµãµÄÂ·¾¶£¬
-        //       È»ºó£¬ÎÊÌâ¾Í×ª»¯³ÉÁËÇóÁ½¸öÁ´±íµÄ¹«¹²½áµã£¬±éÀú¹ý³ÌÖÐ£¬
-        //       ½«Â·¾¶±£´æÔÚÕ»ÖÐ¡£
+        // æ€è·¯ï¼šå‰åºéåŽ†äºŒå‰æ ‘ï¼Œåˆ†åˆ«æ‰¾å‡ºä»Žæ ¹ç»“ç‚¹åˆ° A B ä¸¤ä¸ªç»“ç‚¹çš„è·¯å¾„ï¼Œ
+        //       ç„¶åŽï¼Œé—®é¢˜å°±è½¬åŒ–æˆäº†æ±‚ä¸¤ä¸ªé“¾è¡¨çš„å…¬å…±ç»“ç‚¹ï¼ŒéåŽ†è¿‡ç¨‹ä¸­ï¼Œ
+        //       å°†è·¯å¾„ä¿å­˜åœ¨æ ˆä¸­ã€‚
         if (root == null) {
             return null;
         }

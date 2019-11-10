@@ -1,4 +1,4 @@
-/*Á½¸öÁ´±íµÄµÚÒ»¸ö¹«¹²½áµã
+/*ä¸¤ä¸ªé“¾è¡¨çš„ç¬¬ä¸€ä¸ªå…¬å…±ç»“ç‚¹
 public class ListNode {
     int val;
     ListNode next = null;
@@ -8,13 +8,13 @@ public class ListNode {
     }
 }*/
 public class FindFirstCommonNode {
-    //ÏÈ·Ö±ð¼ÆËãÁ½¸öÁ´±íµÄ³¤¶È£¬¼ÆËãÁ½¸öÁ´±íµÄ³¤¶È²îÖµ n£¬È»ºóÈÃ½Ï³¤µÄÁ´±íÏÈ×ß n ²½£¬
-    //×îºóÍ¬Ê±±éÀúÁ½¸öÁ´±í£¬±éÀú¹ý³ÌÖÐ½«Á½¸öÁ´±íµÄ½áµãÖµÏà±È½Ï£¬Ö±µ½ÕÒµ½µÚÒ»¸öÏàµÈ½Úµã£¬·µ»Ø
+    //å…ˆåˆ†åˆ«è®¡ç®—ä¸¤ä¸ªé“¾è¡¨çš„é•¿åº¦ï¼Œè®¡ç®—ä¸¤ä¸ªé“¾è¡¨çš„é•¿åº¦å·®å€¼ nï¼Œç„¶åŽè®©è¾ƒé•¿çš„é“¾è¡¨å…ˆèµ° n æ­¥ï¼Œ
+    //æœ€åŽåŒæ—¶éåŽ†ä¸¤ä¸ªé“¾è¡¨ï¼ŒéåŽ†è¿‡ç¨‹ä¸­å°†ä¸¤ä¸ªé“¾è¡¨çš„ç»“ç‚¹å€¼ç›¸æ¯”è¾ƒï¼Œç›´åˆ°æ‰¾åˆ°ç¬¬ä¸€ä¸ªç›¸ç­‰èŠ‚ç‚¹ï¼Œè¿”å›ž
     public ListNode fFindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
- 		if(pHead1 == null || pHead2 == null){
+        if(pHead1 == null || pHead2 == null){
             return null;
         }
-        //1.¼ÆËãÁ½¸öÁ´±í³¤¶È
+        //1.è®¡ç®—ä¸¤ä¸ªé“¾è¡¨é•¿åº¦
         int length1 = 0;
         int length2 = 0;
         ListNode position1 = pHead1;
@@ -27,9 +27,9 @@ public class FindFirstCommonNode {
             length2++;
             position2 = position2.next;
         }
-        //2.¼ÆËã²îÖµ
+        //2.è®¡ç®—å·®å€¼
         int diff = 0;
-        //3.½Ï³¤µÄÁ´±íÏÈ×ß diff ²½
+        //3.è¾ƒé•¿çš„é“¾è¡¨å…ˆèµ° diff æ­¥
         if(length1 >= length2){
             diff = length1 - length2;
             for(int i = 1; i <= diff; i++){
@@ -41,7 +41,7 @@ public class FindFirstCommonNode {
                 pHead2 = pHead2.next;
             }
         }
-        //4.Í¬Ê±±éÀúÁ½¸öÁ´±í£¬ÕÒµ½µÚÒ»¸ö¹«¹²½áµã
+        //4.åŒæ—¶éåŽ†ä¸¤ä¸ªé“¾è¡¨ï¼Œæ‰¾åˆ°ç¬¬ä¸€ä¸ªå…¬å…±ç»“ç‚¹
         while(pHead1 != null && pHead2 != null){
             if(pHead1.val == pHead2.val){
                 return pHead1;

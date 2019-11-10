@@ -1,27 +1,27 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator; 
-/** ÊäÈëÒ»¸öÕıÕûÊıÊı×é£¬°ÑÊı×éÀïËùÓĞÊı×ÖÆ´½ÓÆğÀ´ÅÅ³ÉÒ»¸öÊı£¬´òÓ¡ÄÜÆ´½Ó³öµÄËùÓĞÊı×ÖÖĞ×îĞ¡µÄÒ»¸ö¡£
-  * ÀıÈçÊäÈëÊı×é{3£¬32£¬321}£¬Ôò´òÓ¡³öÕâÈı¸öÊı×ÖÄÜÅÅ³ÉµÄ×îĞ¡Êı×ÖÎª321323¡£
-  */
+import java.util.Comparator;
+/** è¾“å…¥ä¸€ä¸ªæ­£æ•´æ•°æ•°ç»„ï¼ŒæŠŠæ•°ç»„é‡Œæ‰€æœ‰æ•°å­—æ‹¼æ¥èµ·æ¥æ’æˆä¸€ä¸ªæ•°ï¼Œæ‰“å°èƒ½æ‹¼æ¥å‡ºçš„æ‰€æœ‰æ•°å­—ä¸­æœ€å°çš„ä¸€ä¸ªã€‚
+ * ä¾‹å¦‚è¾“å…¥æ•°ç»„{3ï¼Œ32ï¼Œ321}ï¼Œåˆ™æ‰“å°å‡ºè¿™ä¸‰ä¸ªæ•°å­—èƒ½æ’æˆçš„æœ€å°æ•°å­—ä¸º321323ã€‚
+ */
 public class PrintMinNumber {
     public String printMinNumber(int[] numbers) {
-		int n;   
+        int n;
         String s = "";
-    	ArrayList<Integer> list= new ArrayList<Integer>();
+        ArrayList<Integer> list= new ArrayList<Integer>();
         for(int i = 0; i < numbers.length; i++){
-     		list.add(numbers[i]);
+            list.add(numbers[i]);
         }
         Collections.sort(list, new Comparator<Integer>(){
             public int compare(Integer str1, Integer str2){
                 String s1 = str1 + "" + str2;
                 String s2 = str2 + "" + str1;
                 return s1.compareTo(s2);
-			}
+            }
         });
         for(int j:list){
             s+=j;
-    	}
-        return s; 
-      }
+        }
+        return s;
+    }
 }

@@ -5,19 +5,19 @@ import java.util.Map;
 
 /**
  * Created by CLAY on 2017/6/24.
- * Êý×éÖÐÓÐÒ»¸öÊý×Ö³öÏÖµÄ´ÎÊý³¬¹ýÊý×é³¤¶ÈµÄÒ»°ë£¬ÇëÕÒ³öÕâ¸öÊý×Ö¡£
- * ÀýÈçÊäÈëÒ»¸ö³¤¶ÈÎª9µÄÊý×é{1,2,3,2,2,2,5,4,2}¡£
- * ÓÉÓÚÊý×Ö2ÔÚÊý×éÖÐ³öÏÖÁË5´Î£¬³¬¹ýÊý×é³¤¶ÈµÄÒ»°ë£¬Òò´ËÊä³ö2¡£Èç¹û²»´æÔÚÔòÊä³ö0¡£
+ * æ•°ç»„ä¸­æœ‰ä¸€ä¸ªæ•°å­—å‡ºçŽ°çš„æ¬¡æ•°è¶…è¿‡æ•°ç»„é•¿åº¦çš„ä¸€åŠï¼Œè¯·æ‰¾å‡ºè¿™ä¸ªæ•°å­—ã€‚
+ * ä¾‹å¦‚è¾“å…¥ä¸€ä¸ªé•¿åº¦ä¸º9çš„æ•°ç»„{1,2,3,2,2,2,5,4,2}ã€‚
+ * ç”±äºŽæ•°å­—2åœ¨æ•°ç»„ä¸­å‡ºçŽ°äº†5æ¬¡ï¼Œè¶…è¿‡æ•°ç»„é•¿åº¦çš„ä¸€åŠï¼Œå› æ­¤è¾“å‡º2ã€‚å¦‚æžœä¸å­˜åœ¨åˆ™è¾“å‡º0ã€‚
  */
 public class MoreThanHalfNum {
-    //·½·¨Ò»£ºÀûÓÃ HashMap<Integer, Integer> K-µ±Ç°Êý×Ö£¬V-´ú±í³öÏÖ´ÎÊý£¬×îºóÕÒ³ö³¬¹ýÊý×é³¤¶ÈÒ»°ëµÄÊý×Ö--[¿Õ¼ä¸´ÔÓ¶ÈO(n),Ê±¼ä¸´ÔÓ¶ÈO(n)]
-    //·½·¨¶þ£ºÊ¹ÓÃ¹¥ÊØÕóµØ·¨£¬¿ªÊ¼³õÊ¼»¯Ò»¸ö±äÁ¿ times Îª1£¬³õÊ¼»¯½á¹û±äÁ¿ÎªÊý×éµÚÒ»¸öÔªËØ£¬±éÀúÊý×é£¬Óöµ½Óë½á¹û±äÁ¿ÏàÍ¬µÄÊý×Ö½«
-    //		 Öµ¼ÓÒ»£»Óöµ½Ò»¸ö²»ÏàÍ¬µÄÊý×Ö£¬½«Öµ¼õÒ»£¬Èô´ËÊ± times < 0,½« times ¸³ÖµÎª 1£¬²¢½«½á¹û±äÁ¿ÉèÖÃÎªµ±Ç°ÔªËØ£¬
-    //    	 ×îºó¼ì²é¶ÔÓ¦½á¹û±äÁ¿ÊÇ·ñ³¬¹ýÊý×é³¤¶ÈÒ»°ë£¬Êä³ö¶ÔÓ¦½á¹û--[Ê±¼ä¸´ÔÓ¶ÈO(n)]
-    //·½·¨Èý£º¸ù¾ÝÊý×éµÄÌØµã£¬ÀûÓÃ²¿·Ö¿ìÅÅ partition() ÕÒ³öÖÐ¼äÔªËØ¼´ÎªÒªÑ¡µÄ--[Ê±¼ä¸´ÔÓ¶ÈO(nlogn)]
-    //        ×¢Òâ£º»á¸Ä±äÊý×éÔªËØÏà¶ÔÎ»ÖÃ
+    //æ–¹æ³•ä¸€ï¼šåˆ©ç”¨ HashMap<Integer, Integer> K-å½“å‰æ•°å­—ï¼ŒV-ä»£è¡¨å‡ºçŽ°æ¬¡æ•°ï¼Œæœ€åŽæ‰¾å‡ºè¶…è¿‡æ•°ç»„é•¿åº¦ä¸€åŠçš„æ•°å­—--[ç©ºé—´å¤æ‚åº¦O(n),æ—¶é—´å¤æ‚åº¦O(n)]
+    //æ–¹æ³•äºŒï¼šä½¿ç”¨æ”»å®ˆé˜µåœ°æ³•ï¼Œå¼€å§‹åˆå§‹åŒ–ä¸€ä¸ªå˜é‡ times ä¸º1ï¼Œåˆå§‹åŒ–ç»“æžœå˜é‡ä¸ºæ•°ç»„ç¬¬ä¸€ä¸ªå…ƒç´ ï¼ŒéåŽ†æ•°ç»„ï¼Œé‡åˆ°ä¸Žç»“æžœå˜é‡ç›¸åŒçš„æ•°å­—å°†
+    //		 å€¼åŠ ä¸€ï¼›é‡åˆ°ä¸€ä¸ªä¸ç›¸åŒçš„æ•°å­—ï¼Œå°†å€¼å‡ä¸€ï¼Œè‹¥æ­¤æ—¶ times < 0,å°† times èµ‹å€¼ä¸º 1ï¼Œå¹¶å°†ç»“æžœå˜é‡è®¾ç½®ä¸ºå½“å‰å…ƒç´ ï¼Œ
+    //    	 æœ€åŽæ£€æŸ¥å¯¹åº”ç»“æžœå˜é‡æ˜¯å¦è¶…è¿‡æ•°ç»„é•¿åº¦ä¸€åŠï¼Œè¾“å‡ºå¯¹åº”ç»“æžœ--[æ—¶é—´å¤æ‚åº¦O(n)]
+    //æ–¹æ³•ä¸‰ï¼šæ ¹æ®æ•°ç»„çš„ç‰¹ç‚¹ï¼Œåˆ©ç”¨éƒ¨åˆ†å¿«æŽ’ partition() æ‰¾å‡ºä¸­é—´å…ƒç´ å³ä¸ºè¦é€‰çš„--[æ—¶é—´å¤æ‚åº¦O(nlogn)]
+    //        æ³¨æ„ï¼šä¼šæ”¹å˜æ•°ç»„å…ƒç´ ç›¸å¯¹ä½ç½®
 
-    //·½·¨Ò»£º
+    //æ–¹æ³•ä¸€ï¼š
     public static int moreThanHalfNum1(int[] array) {
         if (array == null || array.length == 0) {
             return 0;
@@ -42,9 +42,9 @@ public class MoreThanHalfNum {
         return result;
     }
 
-    //·½·¨¶þ£º
+    //æ–¹æ³•äºŒï¼š
     public static int moreThanHalfNum2(int[] array) {
-        //Ê¹ÓÃ¹¥ÊØÕóµØ
+        //ä½¿ç”¨æ”»å®ˆé˜µåœ°
         if (array == null || array.length == 0) {
             return 0;
         }
@@ -67,7 +67,7 @@ public class MoreThanHalfNum {
         return result;
     }
 
-    //·½·¨Èý£º
+    //æ–¹æ³•ä¸‰ï¼š
     public static int moreThanHalfNum3(int[] array) {
         if (array == null || array.length == 0) {
             return 0;

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by CLAY on 2017/8/1.
- * ÊäÈëÁ½¸ö×Ö·û´®£¬ÇóÁ½¸ö×Ö·û´®´ú±íÊı×ÖµÄ³Ë»ı£¬½á¹ûÒÔ×Ö·û´®Êä³ö
+ * è¾“å…¥ä¸¤ä¸ªå­—ç¬¦ä¸²ï¼Œæ±‚ä¸¤ä¸ªå­—ç¬¦ä¸²ä»£è¡¨æ•°å­—çš„ä¹˜ç§¯ï¼Œç»“æœä»¥å­—ç¬¦ä¸²è¾“å‡º
  */
 public class Solution2 {
     public static void main(String[] args) {
@@ -18,12 +18,12 @@ public class Solution2 {
 
     public static String multiply(String num1, String num2) {
         if (num1 == null || num2 == null) {
-            throw new IllegalArgumentException("²ÎÊı´íÎó£¡");
+            throw new IllegalArgumentException("å‚æ•°é”™è¯¯ï¼");
         }
         int len1 = num1.length();
         int len2 = num2.length();
         int product, carry, i, j;
-        int[] num = new int[len1 + len2]; //Á½ÊıÏà³Ë£¬½á¹û³¤¶ÈÎª len1 + len2 »òÕß len1 + len2 - 1
+        int[] num = new int[len1 + len2]; //ä¸¤æ•°ç›¸ä¹˜ï¼Œç»“æœé•¿åº¦ä¸º len1 + len2 æˆ–è€… len1 + len2 - 1
         for (i = len1 - 1; i >= 0; i--) {
             carry = 0;
             for (j = len2 - 1; j >= 0; j--) {
@@ -33,7 +33,7 @@ public class Solution2 {
             }
             num[i + j + 1] = carry;
         }
-        //È¥µô½á¹ûÇ°¶àÓàµÄ 0
+        //å»æ‰ç»“æœå‰å¤šä½™çš„ 0
         i = 0;
         while (i < (len1 + len2) && num[i] == 0) {
             i++;

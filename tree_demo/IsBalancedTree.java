@@ -1,11 +1,11 @@
 /**
- * ÊäÈëÒ»¿Ã¶þ²æÊ÷£¬ÅÐ¶Ï¸Ã¶þ²æÊ÷ÊÇ·ñÊÇÆ½ºâ¶þ²æÊ÷¡£
+ * è¾“å…¥ä¸€æ£µäºŒå‰æ ‘ï¼Œåˆ¤æ–­è¯¥äºŒå‰æ ‘æ˜¯å¦æ˜¯å¹³è¡¡äºŒå‰æ ‘ã€‚
  */
 public class Solution {
-    // Ë¼Â·Ò»£º¶Ô¶þ²æÊ÷½øÐÐºóÐò±éÀú£¬±éÀú¹ý³ÌÖÐ¶ÔÃ¿¸ö½áµã½øÐÐÅÐ¶Ï£¨×óÓÒ×Ó½ÚµãµÄÉî¶È²îµÄ¾ø¶ÔÖµ <= 1£©£¬Èç¹û²»Âú×ã£¬Ôò²»Æ½ºâ¡£
-    //       È±µã£º´æÔÚ´óÁ¿Éî¶ÈÖØ¸´¼ÆËã
-    // Ë¼Â·¶þ£º½«¼ÆËãÉî¶ÈµÄ·½·¨½øÐÐ¸Ä½ø£¬²ÉÓÃºóÐò±éÀú£¬±éÀú¹ý³ÌÖÐ½«¼ÆËã¹ýµÄ½áµãÉî¶È±£´æÆðÀ´£¬±ÜÃâÖØ¸´¼ÆËã
-	public int getDepth(TreeNode root) {
+    // æ€è·¯ä¸€ï¼šå¯¹äºŒå‰æ ‘è¿›è¡ŒåŽåºéåŽ†ï¼ŒéåŽ†è¿‡ç¨‹ä¸­å¯¹æ¯ä¸ªç»“ç‚¹è¿›è¡Œåˆ¤æ–­ï¼ˆå·¦å³å­èŠ‚ç‚¹çš„æ·±åº¦å·®çš„ç»å¯¹å€¼ <= 1ï¼‰ï¼Œå¦‚æžœä¸æ»¡è¶³ï¼Œåˆ™ä¸å¹³è¡¡ã€‚
+    //       ç¼ºç‚¹ï¼šå­˜åœ¨å¤§é‡æ·±åº¦é‡å¤è®¡ç®—
+    // æ€è·¯äºŒï¼šå°†è®¡ç®—æ·±åº¦çš„æ–¹æ³•è¿›è¡Œæ”¹è¿›ï¼Œé‡‡ç”¨åŽåºéåŽ†ï¼ŒéåŽ†è¿‡ç¨‹ä¸­å°†è®¡ç®—è¿‡çš„ç»“ç‚¹æ·±åº¦ä¿å­˜èµ·æ¥ï¼Œé¿å…é‡å¤è®¡ç®—
+    public int getDepth(TreeNode root) {
         if(root == null){
             return 0;
         }
@@ -20,22 +20,22 @@ public class Solution {
         return 1 + Math.max(leftDepth, rightDepth);
     }
 
-	// ·½·¨Ò»£º
-	public boolean isBalanced(TreeNode root){
-		if(root == null){
-			return true;		
-		}
-		int leftDepth = getDepth(root.left);
-		int rightDepth = getDepth(root.right);
-		if(Math.abs(leftDepth - rightDepth) > 1){
-			return false;
-		}
-		return isBalanced(root.left) && isBalanced(root.right);
-	}
+    // æ–¹æ³•ä¸€ï¼š
+    public boolean isBalanced(TreeNode root){
+        if(root == null){
+            return true;
+        }
+        int leftDepth = getDepth(root.left);
+        int rightDepth = getDepth(root.right);
+        if(Math.abs(leftDepth - rightDepth) > 1){
+            return false;
+        }
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
 
-	// ·½·¨¶þ£º
+    // æ–¹æ³•äºŒï¼š
     public boolean IsBalanced2(TreeNode root) {
-        if(checkDepth(root) == -1) {  
+        if(checkDepth(root) == -1) {
             return false;
         }else{
             return true;
@@ -47,19 +47,19 @@ public class Solution {
         int leftDepth = checkDepth(root.left);
         if ( leftDepth == -1) {
             return -1; //unbalanced
-        }  
-          
+        }
+
         int rightDepth = checkDepth(root.right);
         if ( rightDepth == -1) {
             return -1; //unbalanced
-        }  
-          
+        }
+
         int depthDiff = leftDepth - rightDepth;
         if (Math.abs(depthDiff) > 1) {
             return -1; // unbalanced
-        }  
-        else {  
+        }
+        else {
             return Math.max(leftDepth, rightDepth) + 1;
-        }  
+        }
     }
 }

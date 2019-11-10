@@ -1,20 +1,20 @@
-/**ÊäÈëÁ½¿Ã¶ş²æÊ÷A£¬B£¬ÅĞ¶ÏBÊÇ²»ÊÇAµÄ×Ó½á¹¹¡££¨ps£ºÎÒÃÇÔ¼¶¨¿ÕÊ÷²»ÊÇÈÎÒâÒ»¸öÊ÷µÄ×Ó½á¹¹£© 
-public class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
+/**è¾“å…¥ä¸¤æ£µäºŒå‰æ ‘Aï¼ŒBï¼Œåˆ¤æ–­Bæ˜¯ä¸æ˜¯Açš„å­ç»“æ„ã€‚ï¼ˆpsï¼šæˆ‘ä»¬çº¦å®šç©ºæ ‘ä¸æ˜¯ä»»æ„ä¸€ä¸ªæ ‘çš„å­ç»“æ„ï¼‰
+ public class TreeNode {
+ int val = 0;
+ TreeNode left = null;
+ TreeNode right = null;
 
-    public TreeNode(int val) {
-        this.val = val;
+ public TreeNode(int val) {
+ this.val = val;
 
-    }
+ }
 
-}
-*/
+ }
+ */
 public class Solution {
     public boolean HasSubtree(TreeNode root1,TreeNode root2) {
         boolean result = false;
-        
+
         if(root1 != null && root2 != null){
             if(root1.val == root2.val){
                 result = DoesTree1HaveTree2(root1, root2);
@@ -26,24 +26,24 @@ public class Solution {
                 result = HasSubtree(root1.right, root2);
             }
         }
-        
+
         return result;
     }
-    
+
     public boolean DoesTree1HaveTree2(TreeNode root1, TreeNode root2){
-        //µİ¹éÖÕÖ¹Ìõ¼ş£ºµ½´ïÁË tree1 »òÕß tree2 µÄÒ¶½Úµã
+        //é€’å½’ç»ˆæ­¢æ¡ä»¶ï¼šåˆ°è¾¾äº† tree1 æˆ–è€… tree2 çš„å¶èŠ‚ç‚¹
         if(root2 == null){
             return true;
         }
-        
+
         if(root1 == null){
             return false;
         }
-        
+
         if(root1.val != root2.val){
             return false;
         }
-        
+
         return DoesTree1HaveTree2(root1.left, root2.left) && DoesTree1HaveTree2(root1.right, root2.right);
     }
 }

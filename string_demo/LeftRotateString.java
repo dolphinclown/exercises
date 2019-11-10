@@ -1,18 +1,18 @@
 /**
-  * ×Ö·ûĞòÁĞS=¡±abcXYZdef¡±,ÒªÇóÊä³öÑ­»·×óÒÆ3Î»ºóµÄ½á¹û£¬¼´¡°XYZdefabc¡±¡£
-  */
+ * å­—ç¬¦åºåˆ—S=â€abcXYZdefâ€,è¦æ±‚è¾“å‡ºå¾ªç¯å·¦ç§»3ä½åçš„ç»“æœï¼Œå³â€œXYZdefabcâ€ã€‚
+ */
 public class LeftRotateString {
     // abcXYZdef
-    // fedZYXcba ÏÈ½«×Ö·û´®ÕûÌå·­×ª£¬È»ºó½«Á½²¿·Ö·Ö±ğ·­×ª
+    // fedZYXcba å…ˆå°†å­—ç¬¦ä¸²æ•´ä½“ç¿»è½¬ï¼Œç„¶åå°†ä¸¤éƒ¨åˆ†åˆ†åˆ«ç¿»è½¬
     public String leftRotateString(String str,int n) {
         if (str == null || str.length() == 0 || n < 0) {
             return "";
         }
         char[] array = str.toCharArray();
-		// 1. ÕûÌå·­×ª
+        // 1. æ•´ä½“ç¿»è½¬
         reverse(array, 0, array.length - 1);
         int move = n % array.length;
-		// 2. ·Ö±ğ·­×ªÁ½²¿·Ö
+        // 2. åˆ†åˆ«ç¿»è½¬ä¸¤éƒ¨åˆ†
         reverse(array, 0, array.length - 1 - move);
         reverse(array, array.length - move, array.length - 1);
         return new String(array);

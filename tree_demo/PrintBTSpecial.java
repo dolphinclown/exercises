@@ -15,14 +15,14 @@ public class TreeNode {
 }
 */
 public class PrintBTSpecial {
-    //Ë¼Â·£º½èÖúÁ½¸öÕ»À´Íê³É£¬·Ö±ğ±£´æÆæÊıºÍÅ¼Êı²ãµÄÊı¾İ£¬ÆæÊı²ãµÄ´ÓÓÒµ½×óÈëÕ»£¬Å¼Êı²ãÏà·´
+    //æ€è·¯ï¼šå€ŸåŠ©ä¸¤ä¸ªæ ˆæ¥å®Œæˆï¼Œåˆ†åˆ«ä¿å­˜å¥‡æ•°å’Œå¶æ•°å±‚çš„æ•°æ®ï¼Œå¥‡æ•°å±‚çš„ä»å³åˆ°å·¦å…¥æ ˆï¼Œå¶æ•°å±‚ç›¸å
     public ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> temp = new ArrayList<Integer>();
-		if (pRoot == null) {
+        if (pRoot == null) {
             return result;
         }
-        Stack[] stack = new Stack[2]; 
+        Stack[] stack = new Stack[2];
         stack[0] = new Stack<TreeNode>();
         stack[1] = new Stack<TreeNode>();
         int current = 0;
@@ -47,7 +47,7 @@ public class PrintBTSpecial {
                     stack[next].push(cur.left);
                 }
             }
-            
+
             if (stack[current].empty()) {
                 result.add(new ArrayList<Integer>(temp));
                 temp.clear();

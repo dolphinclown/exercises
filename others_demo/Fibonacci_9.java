@@ -2,7 +2,7 @@ package sword;
 
 /**
  * Created by CLAY on 2017/3/2.
- * ì³²¨ÄÇÆõÊıÁĞ
+ * æ–æ³¢é‚£å¥‘æ•°åˆ—
  */
 public class Fibonacci_9 {
     public static void main(String[] args) {

@@ -1,34 +1,34 @@
-/**²Ù×÷¸ø¶¨µÄ¶ş²æÊ÷£¬½«Æä±ä»»ÎªÔ´¶ş²æÊ÷µÄ¾µÏñ
-public class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
+/**æ“ä½œç»™å®šçš„äºŒå‰æ ‘ï¼Œå°†å…¶å˜æ¢ä¸ºæºäºŒå‰æ ‘çš„é•œåƒ
+ public class TreeNode {
+ int val = 0;
+ TreeNode left = null;
+ TreeNode right = null;
 
-    public TreeNode(int val) {
-        this.val = val;
+ public TreeNode(int val) {
+ this.val = val;
 
-    }
+ }
 
-}
-*/
+ }
+ */
 public class Solution {
     public void Mirror(TreeNode root) {
         if(root == null){
-			return;            
+            return;
         }
         if(root.left == null && root.right == null){
- 			return;           
+            return;
         }
-        
-        //Ê¹ÓÃÇ°Ğò±éÀú£¬Èç¹û±éÀúµ½µÄ½áµãÓĞ×Ó½Úµã¾Í½»»»Á½¸ö×Ó½Úµã,
+
+        //ä½¿ç”¨å‰åºéå†ï¼Œå¦‚æœéå†åˆ°çš„ç»“ç‚¹æœ‰å­èŠ‚ç‚¹å°±äº¤æ¢ä¸¤ä¸ªå­èŠ‚ç‚¹,
         TreeNode temp = root.left;
         root.left = root.right;
         root.right = temp;
-        
+
         if(root.left != null){
             Mirror(root.left);
         }
-        
+
         if(root.right != null){
             Mirror(root.right);
         }

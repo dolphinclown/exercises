@@ -1,5 +1,5 @@
-/*ÊäÈëÒ»¸ö¸´ÔÓÁ´±í£¨Ã¿¸ö½ÚµãÖĞÓĞ½ÚµãÖµ£¬ÒÔ¼°Á½¸öÖ¸Õë£¬Ò»¸öÖ¸ÏòÏÂÒ»¸ö½Úµã£¬
-  ÁíÒ»¸öÌØÊâÖ¸ÕëÖ¸ÏòÈÎÒâÒ»¸ö½Úµã£©£¬·µ»Ø½á¹ûÎª¸´ÖÆºó¸´ÔÓÁ´±íµÄhead¡£
+/*è¾“å…¥ä¸€ä¸ªå¤æ‚é“¾è¡¨ï¼ˆæ¯ä¸ªèŠ‚ç‚¹ä¸­æœ‰èŠ‚ç‚¹å€¼ï¼Œä»¥åŠä¸¤ä¸ªæŒ‡é’ˆï¼Œä¸€ä¸ªæŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ï¼Œ
+  å¦ä¸€ä¸ªç‰¹æ®ŠæŒ‡é’ˆæŒ‡å‘ä»»æ„ä¸€ä¸ªèŠ‚ç‚¹ï¼‰ï¼Œè¿”å›ç»“æœä¸ºå¤åˆ¶åå¤æ‚é“¾è¡¨çš„headã€‚
   public class RandomListNode {
       int label;
       RandomListNode next = null;
@@ -17,7 +17,7 @@ public class CloneComplexList {
             return null;
         }
         RandomListNode position = pHead;
-        //1.Ê×ÏÈ£¬½«Á´±íÖĞÃ¿Ò»¸ö½áµã¶¼½øĞĞ¸´ÖÆ£¬½«µÃµ½µÄĞÂ½áµã·ÅÔÚÔ­½áµãºóÃæ
+        //1.é¦–å…ˆï¼Œå°†é“¾è¡¨ä¸­æ¯ä¸€ä¸ªç»“ç‚¹éƒ½è¿›è¡Œå¤åˆ¶ï¼Œå°†å¾—åˆ°çš„æ–°ç»“ç‚¹æ”¾åœ¨åŸç»“ç‚¹åé¢
         while(position != null){
             RandomListNode newNode = new RandomListNode(position.label);
             newNode.next = position.next;
@@ -25,7 +25,7 @@ public class CloneComplexList {
             position = newNode.next;
         }
         position = pHead;
-        //2.½«¸´ÖÆµÃµ½½áµãµÄÌØÊâÖ¸ÕëÖ¸ÏòÕıÈ·µÄ½áµã´¦
+        //2.å°†å¤åˆ¶å¾—åˆ°ç»“ç‚¹çš„ç‰¹æ®ŠæŒ‡é’ˆæŒ‡å‘æ­£ç¡®çš„ç»“ç‚¹å¤„
         while(position != null){
             RandomListNode tempPosition = position.next;
             if(position.random != null){
@@ -34,7 +34,7 @@ public class CloneComplexList {
             position = tempPosition.next;
         }
         position = pHead;
-        //3.½«¸´ÖÆµÄ½áµã²ğ·Ö³öÀ´
+        //3.å°†å¤åˆ¶çš„ç»“ç‚¹æ‹†åˆ†å‡ºæ¥
         RandomListNode newHead = null;
         RandomListNode clonedPosition = null;
         if(position != null){
@@ -43,7 +43,7 @@ public class CloneComplexList {
             position = position.next;
         }
         while(position != null){
-			clonedPosition.next = position.next;
+            clonedPosition.next = position.next;
             clonedPosition = clonedPosition.next;
             position.next = clonedPosition.next;
             position = position.next;
